@@ -85,12 +85,49 @@
     "core": [],
     "bonus": []
   },
-  "publication_status": "pending",
+  "publication_status": "verified_public",
   "lms_status": "owner_submission_pending",
   "secret_scan": {
     "files_scanned": 79,
     "patterns_detected": 0,
     "tracked_env": false,
     "method": "common token/private-key patterns; not a proof that all sensitive text is absent"
+  },
+  "public_content_verification": {
+    "commit": "e276851b59adbab050d8c431ffb2e0b9dab99b72",
+    "repo": "https://github.com/Youngboy1609/K5-L3B-DAY04-HoTrongNghia-2A202603729-ReactLoopAgent",
+    "files": [
+      {
+        "file": "agent.py",
+        "public": true,
+        "sha256": "5120df30c78301799f9e0495804a32b8094abbcac0742d61ef822c531580e431"
+      },
+      {
+        "file": "eval_before.json",
+        "public": true,
+        "sha256": "5660a8f047a2d9a380fb49560557f1a8e7a59969c2f397d35629eb3e4e3fc710"
+      },
+      {
+        "file": "eval_after.json",
+        "public": true,
+        "sha256": "11bd18e98b8a3946b7d7ea25cfcff2ccad3741cd021f3a69d7965fa7743c8544"
+      },
+      {
+        "file": "eval_bonus.json",
+        "public": true,
+        "sha256": "3caa0ce00d95f63120013806d07bef3ce1766a9294f2e7ed14dd3b588888ba8d"
+      },
+      {
+        "file": "NOTES.md",
+        "public": true,
+        "sha256": "4069c6101b3f466d9955fd08a428ebfe22b9313117da268ee9b127588dad8fda"
+      },
+      {
+        "file": "submission_evidence.json",
+        "public": true,
+        "sha256": "f310bc2bae512810849505b63403046cb13580cb1c2227412b9cbffb25fcb736"
+      }
+    ],
+    "authenticated": false
   }
 }

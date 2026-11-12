@@ -113,5 +113,8 @@ Key cần có trong environment của tiến trình; repo không tự đọc `.e
 - [x] CP6: eval sau cùng config, đủ 22/22; bonus đủ 10/10.
 - [x] Có agent.py, eval_before.json, eval_after.json, NOTES.md, eval_bonus.json.
 - [x] Có thể demo trace nhiều bước H1 và lỗi A5/B2 bằng các artifact tương ứng; phần giới hạn nêu rõ lỗi còn lại.
-- [ ] CP7: xác nhận commit đã push và các file nộp mở công khai trên GitHub.
+- [x] CP7: code và artifacts đã push lên main; đã tải lại đủ file nộp khi không đăng nhập và đối chiếu nội dung với commit.
+- [x] Rà 79 file nguồn/artifact theo các mẫu token/private key phổ biến: không phát hiện; `.env` không được track. Đây không phải chứng minh mọi loại thông tin nhạy cảm đều đã được phát hiện.
 - [ ] Chủ repo dán link lên LMS và xác nhận LMS nhận bài.
+
+**Trạng thái:** đã đủ artifacts và kiểm tra của repo để nộp bài. Repo public: https://github.com/Youngboy1609/K5-L3B-DAY04-HoTrongNghia-2A202603729-ReactLoopAgent. Chủ repo còn nộp link và xác nhận LMS nhận bài.
