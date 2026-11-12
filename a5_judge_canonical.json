@@ -1,0 +1,46 @@
+{
+  "id": "A5",
+  "grade": {
+    "score": 76,
+    "raw_judge_score": 76,
+    "dimensions": {
+      "factuality": 35,
+      "completeness": 22,
+      "evidence": 14,
+      "boundaries": 5
+    },
+    "status": "scored",
+    "reason": "Trả lời chính xác giới hạn của tool (độ sâu tối đa 50 incident), thừa nhận không thể xác minh danh sách đầy đủ năm 2025, và cung cấp các thông tin chi tiết lại được trả về, trừ khi có nguồn thực tế không ghi rõ. Không bịa dữ liệu hay kết luận sai.",
+    "improvement": "Cung cấp phiên bản API mã nguồn hoặc mô tả quy trình phân trang để truy xuất toàn bộ lịch sử, và đưa nguồn chính xác cho từng incident (ví dụ URL của incident thực tế).",
+    "mechanical": {
+      "violations": [],
+      "score_cap": 100,
+      "tool_calls": 2,
+      "tool_steps": 2
+    },
+    "judge_usage": {
+      "prompt_tokens": 1791,
+      "completion_tokens": 543,
+      "total_tokens": 2334,
+      "cost": 0.00012975,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00012975,
+        "upstream_inference_prompt_cost": 5.373e-05,
+        "upstream_inference_completions_cost": 7.602e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 451,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "judge_trace_truncated": false
+  }
+}

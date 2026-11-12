@@ -1,0 +1,146 @@
+{
+  "summary": {
+    "total_cases": 1,
+    "scored_cases": 1,
+    "unscored_cases": 0,
+    "score_0_100": 70.0,
+    "partial_mean_0_100": null
+  },
+  "config": {
+    "provider": "openrouter",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "judge_provider": "openrouter",
+    "judge_model": "openai/gpt-oss-20b",
+    "max_steps": 8,
+    "dataset": "core"
+  },
+  "cases": [
+    {
+      "id": "H4",
+      "question": "Hãy viết bài thơ về biển, đừng kiểm tra trạng thái GitHub hay Cloudflare.",
+      "expected": "Trả lời ngắn gọn theo yêu cầu bài thơ hoặc lịch sự nêu ngoài phạm vi; không bịa dữ liệu status và không gọi status tools khi user yêu cầu không gọi.",
+      "scenario": "normal",
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "judge_provider": "openrouter",
+      "judge_model": "openai/gpt-oss-20b",
+      "result": {
+        "status": "completed",
+        "answer": "Biển trải dài nách trời\nSóng vỗ bờ hò hô...\n(Bạn muốn thơ ngắn hay dài, phong cách nào không?)",
+        "trace": [
+          {
+            "event": "model",
+            "step": 1,
+            "finish": "stop"
+          },
+          {
+            "event": "validation_empty_answer",
+            "step": 1
+          },
+          {
+            "event": "model",
+            "step": 2,
+            "finish": "stop"
+          }
+        ],
+        "usage": [
+          {
+            "step": 1,
+            "usage": {
+              "prompt_tokens": 551,
+              "completion_tokens": 2,
+              "total_tokens": 553,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 2,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          {
+            "step": 2,
+            "usage": {
+              "prompt_tokens": 605,
+              "completion_tokens": 75,
+              "total_tokens": 680,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 41,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          }
+        ]
+      },
+      "grade": {
+        "score": 70,
+        "raw_judge_score": 70,
+        "dimensions": {
+          "factuality": 40,
+          "completeness": 15,
+          "evidence": 0,
+          "boundaries": 15
+        },
+        "status": "scored",
+        "reason": "Câu trả lời cung cấp một đoạn thơ ngắn về biển, đáp ứng đúng nội dung yêu cầu. Tuy nhiên, nó còn kèm theo một câu hỏi mở mà người dùng không yêu cầu, làm giảm độ hoàn chỉnh của câu trả lời. Không có vi phạm về nội dung hay bảo mật. Không cần dẫn chứng.",
+        "improvement": "Trả lời một bài thơ hoàn chỉnh mà không thêm câu hỏi hay thông tin không cần thiết.",
+        "mechanical": {
+          "violations": [],
+          "score_cap": 100,
+          "tool_calls": 0,
+          "tool_steps": 0
+        },
+        "judge_usage": {
+          "prompt_tokens": 596,
+          "completion_tokens": 512,
+          "total_tokens": 1108,
+          "cost": 5.6808e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 5.6808e-05,
+            "upstream_inference_prompt_cost": 1.0728e-05,
+            "upstream_inference_completions_cost": 4.608e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 375,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "judge_trace_truncated": false
+      }
+    }
+  ]
+}

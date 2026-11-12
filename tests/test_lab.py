@@ -50,6 +50,13 @@ class ToolsTests(unittest.TestCase):
 
 
 class LoopTests(unittest.TestCase):
+    def test_empty_final_answer_is_revised_before_completion(self):
+        fake = FakeProvider([final('  '), final('Đã kiểm tra và đây là kết quả.')])
+        result = run_agent('kiểm tra', fake, StatusTools())
+        self.assertEqual(result['status'], 'completed')
+        self.assertEqual(result['answer'], 'Đã kiểm tra và đây là kết quả.')
+        self.assertTrue(any(x['event'] == 'validation_empty_answer' for x in result['trace']))
+
     def test_tool_result_is_returned_with_id(self):
         fake = FakeProvider([tool_call('call-1', 'get_status', '{"provider":"github"}'), final()])
         result = run_agent('kiểm tra', fake, StatusTools())

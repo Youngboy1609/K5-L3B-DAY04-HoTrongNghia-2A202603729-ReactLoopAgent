@@ -1,0 +1,334 @@
+{
+  "summary": {
+    "total_cases": 1,
+    "scored_cases": 0,
+    "unscored_cases": 1,
+    "score_0_100": null,
+    "partial_mean_0_100": null
+  },
+  "config": {
+    "provider": "openrouter",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "judge_provider": "openrouter",
+    "judge_model": "openai/gpt-oss-20b",
+    "max_steps": 8,
+    "dataset": "core"
+  },
+  "cases": [
+    {
+      "id": "A5",
+      "question": "Tôi cần danh sách đầy đủ tất cả incident GitHub Actions trong năm 2025. Hãy tìm dữ liệu và nói rõ độ đầy đủ của kết quả, đừng bịa.",
+      "expected": "Snapshot chỉ có tối đa 50 incident gần nhất; không thể chứng minh danh sách đầy đủ cho 2025. Không kết luận không có incident hoặc đưa danh sách giả.",
+      "scenario": "normal",
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "judge_provider": "openrouter",
+      "judge_model": "openai/gpt-oss-20b",
+      "result": {
+        "status": "error",
+        "answer": "**Incident source URL từ các cuộc gọi `get_incident_details` thành công:**\n\n| Incident ID | URL incident |\n|-------------|--------------|\n| t89g2q1800fr | https://stspg.io/lv4q3xm9r0rk |\n\n*Chỉ có 1 cuộc gọi `get_incident_details` thành công trong phiên này.*",
+        "trace": [
+          {
+            "event": "model",
+            "step": 1,
+            "finish": "tool_calls"
+          },
+          {
+            "event": "tool",
+            "step": 1,
+            "name": "get_status",
+            "arguments": {
+              "provider": "github",
+              "component": "Actions"
+            },
+            "result": {
+              "provider": "github",
+              "captured_at": "2026-11-09T03:50:47.065020+00:00",
+              "overall": {
+                "indicator": "none",
+                "description": "All Systems Operational"
+              },
+              "components": [
+                {
+                  "name": "Actions",
+                  "status": "operational"
+                }
+              ],
+              "incidents": [
+                {
+                  "id": "pfbmpxxfq1cy",
+                  "name": "Degraded performance for multiple GitHub services",
+                  "status": "resolved",
+                  "updated_at": "2026-11-06T00:20:49.369Z"
+                },
+                {
+                  "id": "t89g2q1800fr",
+                  "name": "Incident with Actions",
+                  "status": "resolved",
+                  "updated_at": "2026-11-05T17:42:35.455Z"
+                },
+                {
+                  "id": "h02n9572mx9y",
+                  "name": "Incident with Actions",
+                  "status": "resolved",
+                  "updated_at": "2026-11-07T01:10:18.506Z"
+                },
+                {
+                  "id": "xr3myzj7ms51",
+                  "name": "Incident with Actions and Pages",
+                  "status": "resolved",
+                  "updated_at": "2026-11-07T01:04:38.647Z"
+                },
+                {
+                  "id": "smtdswd1h2w4",
+                  "name": "Incident with Pull Requests, Git Operations and Issues",
+                  "status": "resolved",
+                  "updated_at": "2026-11-04T11:50:06.459Z"
+                }
+              ],
+              "matching_incidents_in_last_50": 23,
+              "note": "Chỉ tìm theo chuỗi trong 50 incident gần nhất; không tìm thấy không chứng minh không có sự cố.",
+              "source": "https://www.githubstatus.com"
+            }
+          },
+          {
+            "event": "model",
+            "step": 2,
+            "finish": "stop"
+          },
+          {
+            "event": "validation_missing_incident_details",
+            "step": 2,
+            "providers": [
+              "github"
+            ]
+          },
+          {
+            "event": "tool",
+            "step": 2,
+            "name": "get_incident_details",
+            "arguments": {
+              "provider": "github",
+              "incident_id": "t89g2q1800fr"
+            },
+            "result": {
+              "ok": true,
+              "provider": "github",
+              "captured_at": "2026-11-09T03:50:47.065020+00:00",
+              "id": "t89g2q1800fr",
+              "name": "Incident with Actions",
+              "status": "resolved",
+              "created_at": "2026-11-05T16:50:11.086Z",
+              "updated_at": "2026-11-05T17:42:35.455Z",
+              "components": [
+                "Actions"
+              ],
+              "updates": [
+                {
+                  "status": "resolved",
+                  "created_at": "2026-11-05T17:42:35.425Z",
+                  "body": "This incident has been resolved. Thank you for your patience and understanding as we addressed this issue. A detailed root cause analysis will be shared as soon as it is available.",
+                  "truncated": false
+                },
+                {
+                  "status": "monitoring",
+                  "created_at": "2026-11-05T17:04:46.807Z",
+                  "body": "The degradation affecting Actions has been mitigated. We are monitoring to ensure stability.",
+                  "truncated": false
+                },
+                {
+                  "status": "investigating",
+                  "created_at": "2026-11-05T16:50:11.189Z",
+                  "body": "We are investigating reports of degraded performance for Actions",
+                  "truncated": false
+                }
+              ],
+              "updates_total": 4,
+              "url": "https://stspg.io/lv4q3xm9r0rk"
+            }
+          },
+          {
+            "event": "model",
+            "step": 3,
+            "finish": "stop"
+          },
+          {
+            "event": "validation_historical_completeness",
+            "step": 3
+          },
+          {
+            "event": "model",
+            "step": 4,
+            "finish": "stop"
+          },
+          {
+            "event": "validation_missing_source",
+            "step": 4,
+            "missing_sources": [
+              "https://stspg.io/lv4q3xm9r0rk"
+            ]
+          },
+          {
+            "event": "model",
+            "step": 5,
+            "finish": "stop"
+          },
+          {
+            "event": "validation_historical_completeness",
+            "step": 5
+          },
+          {
+            "event": "validation_failed",
+            "step": 5,
+            "reason": "historical_completeness"
+          }
+        ],
+        "usage": [
+          {
+            "step": 1,
+            "usage": {
+              "prompt_tokens": 1021,
+              "completion_tokens": 155,
+              "total_tokens": 1176,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 120,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          {
+            "step": 2,
+            "usage": {
+              "prompt_tokens": 1653,
+              "completion_tokens": 792,
+              "total_tokens": 2445,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 288,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          {
+            "step": 3,
+            "usage": {
+              "prompt_tokens": 2522,
+              "completion_tokens": 527,
+              "total_tokens": 3049,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 30,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          {
+            "step": 4,
+            "usage": {
+              "prompt_tokens": 3076,
+              "completion_tokens": 232,
+              "total_tokens": 3308,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 82,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          },
+          {
+            "step": 5,
+            "usage": {
+              "prompt_tokens": 3263,
+              "completion_tokens": 177,
+              "total_tokens": 3440,
+              "cost": 0,
+              "is_byok": false,
+              "prompt_tokens_details": {
+                "cached_tokens": 0,
+                "cache_write_tokens": 0,
+                "audio_tokens": 0,
+                "video_tokens": 0
+              },
+              "cost_details": {
+                "upstream_inference_cost": 0,
+                "upstream_inference_prompt_cost": 0,
+                "upstream_inference_completions_cost": 0
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 92,
+                "image_tokens": 0,
+                "audio_tokens": 0
+              }
+            }
+          }
+        ],
+        "error": "VALIDATION_FAILED"
+      },
+      "grade": {
+        "score": null,
+        "status": "unscored",
+        "reason": "Run lỗi; chưa phân biệt được lỗi agent và hạ tầng.",
+        "mechanical": {
+          "violations": [],
+          "score_cap": 100,
+          "tool_calls": 2,
+          "tool_steps": 2
+        },
+        "judge_usage": {}
+      }
+    }
+  ]
+}

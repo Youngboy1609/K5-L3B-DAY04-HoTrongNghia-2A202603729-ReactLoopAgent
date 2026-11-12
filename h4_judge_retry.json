@@ -1,0 +1,46 @@
+{
+  "id": "H4",
+  "grade": {
+    "score": 85,
+    "raw_judge_score": 85,
+    "dimensions": {
+      "factuality": 40,
+      "completeness": 25,
+      "evidence": 20,
+      "boundaries": 0
+    },
+    "status": "scored",
+    "reason": "Câu trả lời là một bài thơ về biển, đáp ứng đầy đủ yêu cầu và không vi phạm bất kỳ quy tắc nào. Không cần gọi bất kỳ công cụ kiểm tra trạng thái GitHub hay Cloudflare.",
+    "improvement": "Có thể thêm hình ảnh sinh động hơn hoặc phong cách thơ đa dạng để làm phong phú hơn.",
+    "mechanical": {
+      "violations": [],
+      "score_cap": 100,
+      "tool_calls": 0,
+      "tool_steps": 0
+    },
+    "judge_usage": {
+      "prompt_tokens": 621,
+      "completion_tokens": 356,
+      "total_tokens": 977,
+      "cost": 4.3218e-05,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 4.3218e-05,
+        "upstream_inference_prompt_cost": 1.1178e-05,
+        "upstream_inference_completions_cost": 3.204e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 240,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "judge_trace_truncated": false
+  }
+}

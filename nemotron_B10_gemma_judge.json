@@ -1,0 +1,17 @@
+{
+  "case": "B10",
+  "agent_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "judge_model": "google/gemma-4-26b-a4b-it:free",
+  "grade": {
+    "score": null,
+    "status": "unscored",
+    "reason": "Judge lỗi: Provider trả HTTP 429; kiểm tra model, key và quota.",
+    "mechanical": {
+      "violations": [],
+      "score_cap": 100,
+      "tool_calls": 6,
+      "tool_steps": 3
+    },
+    "judge_usage": {}
+  }
+}
